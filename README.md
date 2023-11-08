@@ -1,10 +1,6 @@
 # DynRT
 This repository contains (PyTorch) code and pre-trained models for Dynamic Routing Transformer Network (DynRT), described by the paper *Dynamic Routing Transformer Network for Multimodal Sarcasm Detection* accepted by ACL 2023.
 
-### Install dependencies
-Please install all the dependency packages using the following command:
-```
-pip install -r requirements.txt
 ```
 ### Datasets
 Our experiments are based on Multimodal Sarcasm Detection (MSD) dataset. Please refer to our paper for more details about this datasets. The file size of image data is too large to submit as supplementary materials. 
@@ -42,13 +38,12 @@ CUDA_VISIBLE_DEVICES=0 python train.py {path of the parameter configuration file
 ```
 You can use `test.py` to evaluate an existing model. Please fill the model path as a value for the key  `test_on_checkpoint` in the config file. You can find our checkpoint file from the [ACL23-DynRT](https://drive.google.com/drive/folders/1sV9r-dlESCOeD2xsnpkd_lmgL_4MlT8U?usp=share_link). A command template is as follows:
 ```bash
-CUDA_VISIBLE_DEVICES=0 python test.py {path of the parameter configuration file} \
+python test.py config/DynRT.json \
 ```
 
 The experimental results will be stored in a subfolder of the folder `exp/{date-time}/`. In this fold, `log.txt` is the log file, JSON file is the parameter configuration file. 
 
 The configuration files are in the folder `config/`. 
-
 
 
 ## CheckList 
@@ -62,4 +57,3 @@ Thanks for the dataset from https://github.com/headacheboy/data-of-multimodal-sa
 Thanks for the RoBERTa model from https://huggingface.co/roberta-base/
 
 Thanks for the TRAR from https://github.com/rentainhe/TRAR-VQA
-
