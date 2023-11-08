@@ -1,7 +1,6 @@
 # DynRT
 This repository contains (PyTorch) code and pre-trained models for Dynamic Routing Transformer Network (DynRT), described by the paper *Dynamic Routing Transformer Network for Multimodal Sarcasm Detection* accepted by ACL 2023.
 
-```
 ### Datasets
 Our experiments are based on the Multimodal Sarcasm Detection (MSD) dataset. The file size of image data is too large to submit as supplementary materials. 
 
@@ -19,8 +18,10 @@ def load_file(filename):
 ```
 
 
-We preprocess the image and convert the image to a numpy array in order to save training time.  The numpy array file of the image will be saved in the fold `image_tensor/`. Please run the following command:
-```bash
+#### We preprocess the image and convert the image to a numpy array in order to save training time.  
+The numpy array file of the image will be saved in the fold `image_tensor/`. 
+Please run the following command:
+```
 python convert_image_to_tensor_save.py
 ```
 
@@ -36,17 +37,19 @@ Download the pre-trained model roberta-base and corresponding files from
 The parameter configuration files for training and testing are in the fold `config/`.
 You can use `train.py` to train a DynRT model. A command template is as follows:
 
-```bash
+```
 python train.py config/DynRT.json \
 ```
+
 You can use `test.py` to evaluate an existing model. Please fill the model path as a value for the key  `test_on_checkpoint` in the config file. You can find our checkpoint file from the [ACL23-DynRT](https://drive.google.com/drive/folders/1sV9r-dlESCOeD2xsnpkd_lmgL_4MlT8U?usp=share_link). A command template is as follows:
 
-```bash
+```
 python test.py config/DynRT-test.json \
 ```
 
 
-The experimental results will be stored in a subfolder of the folder `exp/{date-time}/`. In this fold, `log.txt` is the log file, JSON file is the parameter configuration file. 
+The experimental results will be stored in a subfolder of the folder `exp/{date-time}/`. 
+In this fold, `log.txt` is the log file, JSON file is the parameter configuration file. 
 
 The configuration files are in the folder `config/`. 
 
