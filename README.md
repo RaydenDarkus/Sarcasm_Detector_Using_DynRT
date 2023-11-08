@@ -10,6 +10,7 @@ Please download the image data from [data-of-multimodal-sarcasm-detection](https
 The text data and corresponding labels before preprocessing are in the folder `input/prepared`, which is the same with 
 [data-of-multimodal-sarcasm-detection/text](https://github.com/headacheboy/data-of-multimodal-sarcasm-detection/tree/master/text). We follow [data-of-multimodal-sarcasm-detection/LoadData.py](https://github.com/headacheboy/data-of-multimodal-sarcasm-detection/blob/f42b16510208624d91fa545ca9bb64c6335f971e/codes/loadData.py#L80) to remove easy samples with regular words (e.g. humor, sarcasm, etc.) as all previous studies do. Please run `clean_dataset.py` to get the preprocessed dataset in the folder `input/prepared_clean`. All the text data and corresponding labels are saved as binary files to save storage space. To read these binary files, please use the following function:
 
+
 ```
 def load_file(filename):
     with open(filename, 'rb') as filehandle:
@@ -19,7 +20,7 @@ def load_file(filename):
 
 
 We preprocess the image and convert the image to a numpy array in order to save training time.  The numpy array file of the image will be saved in the fold `image_tensor/`. Please run the following command:
-```
+```bash
 python convert_image_to_tensor_save.py
 ```
 
@@ -34,12 +35,14 @@ Download the pre-trained model roberta-base and corresponding files from
 ### Train/evaluate the model
 The parameter configuration files for training and testing are in the fold `config/`.
 You can use `train.py` to train a DynRT model. A command template is as follows:
+
 ```bash
-CUDA_VISIBLE_DEVICES=0 python train.py {path of the parameter configuration file} \
+python train.py config/DynRT.json \
 ```
 You can use `test.py` to evaluate an existing model. Please fill the model path as a value for the key  `test_on_checkpoint` in the config file. You can find our checkpoint file from the [ACL23-DynRT](https://drive.google.com/drive/folders/1sV9r-dlESCOeD2xsnpkd_lmgL_4MlT8U?usp=share_link). A command template is as follows:
+
 ```bash
-python test.py config/DynRT.json \
+python test.py config/DynRT-test.json \
 ```
 
 
