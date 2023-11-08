@@ -3,12 +3,12 @@ This repository contains (PyTorch) code and pre-trained models for Dynamic Routi
 
 ```
 ### Datasets
-Our experiments are based on Multimodal Sarcasm Detection (MSD) dataset. Please refer to our paper for more details about this datasets. The file size of image data is too large to submit as supplementary materials. 
+Our experiments are based on the Multimodal Sarcasm Detection (MSD) dataset. The file size of image data is too large to submit as supplementary materials. 
 
 Please download the image data from [data-of-multimodal-sarcasm-detection](https://github.com/headacheboy/data-of-multimodal-sarcasm-detection) and put all the images in the folder `dataset_image`. 
 
-The text data and corresponding labels before preprocessing are in the folder `input/prepared`, which are the same with 
-[data-of-multimodal-sarcasm-detection/text](https://github.com/headacheboy/data-of-multimodal-sarcasm-detection/tree/master/text). We follow [data-of-multimodal-sarcasm-detection/LoadData.py](https://github.com/headacheboy/data-of-multimodal-sarcasm-detection/blob/f42b16510208624d91fa545ca9bb64c6335f971e/codes/loadData.py#L80) to remove easy samples with regular words (e.g. humor, sarcasm, etc.) as all previous studies do. Please run `clean_dataset.py` to get preprocessed dataset in the folder `input/prepared_clean`. To save storage space, all the text data and corresponding labels are saved as binary files. To read these binary files, please use the following function:
+The text data and corresponding labels before preprocessing are in the folder `input/prepared`, which is the same with 
+[data-of-multimodal-sarcasm-detection/text](https://github.com/headacheboy/data-of-multimodal-sarcasm-detection/tree/master/text). We follow [data-of-multimodal-sarcasm-detection/LoadData.py](https://github.com/headacheboy/data-of-multimodal-sarcasm-detection/blob/f42b16510208624d91fa545ca9bb64c6335f971e/codes/loadData.py#L80) to remove easy samples with regular words (e.g. humor, sarcasm, etc.) as all previous studies do. Please run `clean_dataset.py` to get the preprocessed dataset in the folder `input/prepared_clean`. All the text data and corresponding labels are saved as binary files to save storage space. To read these binary files, please use the following function:
 
 ```
 def load_file(filename):
@@ -28,6 +28,7 @@ Download the pre-trained model roberta-base and corresponding files from
 [roberta-base](https://huggingface.co/roberta-base/). Put these files in `roberta-base/` folder.
 
 
+
 ## Model
 
 ### Train/evaluate the model
@@ -41,9 +42,11 @@ You can use `test.py` to evaluate an existing model. Please fill the model path 
 python test.py config/DynRT.json \
 ```
 
+
 The experimental results will be stored in a subfolder of the folder `exp/{date-time}/`. In this fold, `log.txt` is the log file, JSON file is the parameter configuration file. 
 
 The configuration files are in the folder `config/`. 
+
 
 
 ## CheckList 
