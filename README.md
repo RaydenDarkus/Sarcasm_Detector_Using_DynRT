@@ -38,13 +38,13 @@ The parameter configuration files for training and testing are in the fold `conf
 You can use `train.py` to train a DynRT model. A command template is as follows:
 
 ```
-python train.py config/DynRT.json \
+python train.py config/DynRT.json
 ```
 
 You can use `test.py` to evaluate an existing model. Please fill the model path as a value for the key  `test_on_checkpoint` in the config file. You can find our checkpoint file from the [ACL23-DynRT](https://drive.google.com/drive/folders/1sV9r-dlESCOeD2xsnpkd_lmgL_4MlT8U?usp=share_link). A command template is as follows:
 
 ```
-python test.py config/DynRT-test.json \
+python test.py config/DynRT-test.json
 ```
 
 
