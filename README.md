@@ -66,3 +66,9 @@ Thanks for the dataset from https://github.com/headacheboy/data-of-multimodal-sa
 Thanks for the RoBERTa model from https://huggingface.co/roberta-base/
 
 Thanks for the TRAR from https://github.com/rentainhe/TRAR-VQA
+
+## Checkpoint-2 
+
+See the log files under the exp/ folder for different languages and robustness tests for more details. 
+Some edits have been done later on. There is also code for translating the dataset, converting file to 
+binary and so on.
