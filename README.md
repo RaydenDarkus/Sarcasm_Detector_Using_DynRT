@@ -72,3 +72,7 @@ Thanks for the TRAR from https://github.com/rentainhe/TRAR-VQA
 See the log files under the exp/ folder for different languages and robustness tests for more details. 
 Some edits have been done later on. There is also code for translating the dataset, converting file to 
 binary and so on.
+
+In config/DynRT.json and DynRT-test.json, update the paths for xlm-roberta-base and update the paths for 
+the different input folders of different languages as well and change RobertaTokenizer to XLMRobertaTokenizer
+in some places.
